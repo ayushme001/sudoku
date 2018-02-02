@@ -17,39 +17,32 @@
 #include <stdio.h>
 #define N 9
 
-/*
-int checkRC(int [][],int, int, int, int);
-int checkBC(int [][],int, int, int, int);
-void print(int[][]);
-*/
+
 
 int checkRC(int grid[N][N],int x, int y, int v, int flag)
 {
     int i,j;
-   /* x=x-1;
-    y=y-1;*/
+   
     flag=0;
     
             for(i=0;i<N;i++)
             {
                 if(grid[x][y]!=0)
                 {
-                 printf("you cannot enter this value here \n");
+                    printf("you cannot enter this value here \n");
                     ++flag;   
                 }
                 else if(grid[x][i]==v || grid[i][y]==v)
                 {
                     printf("you cannot enter this value here \n");
                     ++flag;
-                   // break;
+                  
                 }
                 else if(v==0)
                 {
                     printf("you cannot enter a zero \n");
                     ++flag;
-                    //break;
                     
-
                 }
                 if(flag!=0)
                 break;
@@ -64,8 +57,6 @@ int checkRC(int grid[N][N],int x, int y, int v, int flag)
 {
     int a=0,b=0,c=0,d=0,i,j;
     flag=0;
-   /* x=x-1;
-    y=y-1;*/
     while(a!=0 && b!=0)
     {
         if((x)%3==0)
@@ -84,8 +75,6 @@ int checkRC(int grid[N][N],int x, int y, int v, int flag)
             b=x+2;
         }
     }
-
-   
 
      while(c!=0 && d!=0)
     {
@@ -125,24 +114,6 @@ int checkRC(int grid[N][N],int x, int y, int v, int flag)
   }
  
  
- /*void print(int a[N][N])
- {
-     int i,j;
-     for(i=0;i<N;i++)
-        {
-            for(j=0;j<N;j++)
-                {
-                    printf("%d " " ",a[i][j]);
-
-                    if(j%3==0)
-                    printf(" | ");
-                }       
-            printf("\n");
-            if(i%3==0)
-            printf(" ------------------ ");
-    }
-
- }*/
  
  
 void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsToGenerate, int *nRandonNumber)
@@ -159,7 +130,7 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
  
  int main()
  {
-        int c1=0,c2=0,count=0,flag=0,i,j,v,x,y,p,q,r=0;
+        int c1=0,c2=0,count=0,flag=0,i,j,v,x,y,r=0;
                     int grid[N][N] = {0,0,0, 0,0,0, 0,0,0,
                                       0,0,0, 0,0,0, 0,0,0,
                                       0,0,0, 0,0,0, 0,0,0,
@@ -170,30 +141,36 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
                                       0,0,0, 0,0,0, 0,0,0};
         srand(time(NULL));
         RandomNumberGenerator(1,6,1,&r);
-        //printf("hi");3
         printf("\n%d \n",r);
         
+     
+     
+        printf("\n-------------------------ґʊℓεṧ-------------------------\n");
+        printf(" The classic Sudoku game involves a grid of 81 squares. \n The grid is divided into nine blocks, each containing \n nine squares.\n The rules of the game are simple: each of the nine \n blocks has to contain all the numbers 1-9 within its \n squares. Each number can only appear once in a row, \n column or box.\n The difficulty lies in that each vertical nine-square \n column, or horizontal nine-square line across, within the \n larger square, must also contain the numbers 1-9, \n without repetition or omission.\n \n Every puzzle has just one correct solution.\n"); 
+        printf("\n-------------------------------------------------------\n");
+       
+        
                    
-                        int grid1[N][N] ={{0,0,0, 0,0,3, 2,9,0},
-                                          {0,8,6, 5,0,0, 0,0,0},
-                                          {0,2,0, 0,0,1, 0,0,0},
-                                          {0,0,3, 7,0,5, 1,0,0},
-                                          {9,0,0, 0,0,0, 0,0,8},
-                                          {0,0,2, 9,0,8, 3,0,0},
-                                          {0,0,0, 4,0,0, 0,8,0},
-                                          {0,4,7, 1,0,0, 0,0,0},
-                                          {1,3,0, 0,0,0, 4,0,0}};;
+                        int grid1[N][N] ={{0, 0, 0, 0, 0, 3, 2, 9, 0},
+                                          {0, 8, 6, 5, 0, 0, 0, 0, 0},
+                                          {0, 2, 0, 0, 0, 1, 0, 0, 0},
+                                          {0, 0, 3, 7, 0, 5, 1, 0, 0},
+                                          {9, 0, 0, 0, 0, 0, 0, 0, 8},
+                                          {0, 0, 2, 9, 0, 8, 3, 0, 0},
+                                          {0, 0, 0, 4, 0, 0, 0, 8, 0},
+                                          {0, 4, 7, 1, 0, 0, 0, 0, 0},
+                                          {1, 3, 0, 0, 0, 0, 4, 0, 0}};;
 
                     
-                        int grid2[N][N]= {{3, 0, 6, 5, 0, 8, 4, 0, 0},
-                                        {5, 2, 0, 0, 0, 0, 0, 0, 0},
-                                        {0, 8, 7, 0, 0, 0, 0, 3, 1},
-                                        {0, 0, 3, 0, 1, 0, 0, 8, 0},
-                                        {9, 0, 0, 8, 6, 3, 0, 0, 5},
-                                        {0, 5, 0, 0, 9, 0, 6, 0, 0},
-                                        {1, 3, 0, 0, 0, 0, 2, 5, 0},
-                                        {0, 0, 0, 0, 0, 0, 0, 7, 4},
-                                        {0, 0, 5, 2, 0, 6, 3, 0, 0}};
+                        int grid2[N][N]={{3, 0, 6, 5, 0, 8, 4, 0, 0},
+                                         {5, 2, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 8, 7, 0, 0, 0, 0, 3, 1},
+                                         {0, 0, 3, 0, 1, 0, 0, 8, 0},
+                                         {9, 0, 0, 8, 6, 3, 0, 0, 5},
+                                         {0, 5, 0, 0, 9, 0, 6, 0, 0},
+                                         {1, 3, 0, 0, 0, 0, 2, 5, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 7, 4},
+                                         {0, 0, 5, 2, 0, 6, 3, 0, 0}};
        
                         int grid3[N][N]={{0, 0, 4, 0, 0, 0, 6, 3, 0},
                                         {0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -206,14 +183,14 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
                                         {0, 0, 0, 2, 0, 0, 4, 1, 0}};
 
                         int grid4[N][N]={{1, 2, 3, 0, 0, 0, 0, 0, 0},
-                                               {0, 0, 0, 0, 0, 0, 1, 2, 3},
-                                               {0, 0, 0, 1, 2, 3, 0, 0, 0},
-                                               {2, 3, 1, 0, 0, 0, 0, 0, 0},
-                                               {0, 0, 0, 0, 0, 0, 2, 3, 1},
-                                               {0, 0, 0, 2, 3, 1, 0, 0, 0},
-                                               {3, 1, 2, 0, 0, 0, 0, 0, 0},
-                                               {0, 0, 0, 0, 0, 0, 3, 1, 2},
-                                               {0, 0, 0, 3, 1, 2, 0, 0, 0}};
+                                         {0, 0, 0, 0, 0, 0, 1, 2, 3},
+                                         {0, 0, 0, 1, 2, 3, 0, 0, 0},
+                                         {2, 3, 1, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 2, 3, 1},
+                                         {0, 0, 0, 2, 3, 1, 0, 0, 0},
+                                         {3, 1, 2, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 3, 1, 2},
+                                         {0, 0, 0, 3, 1, 2, 0, 0, 0}};
 
        
                         int grid5[N][N]={ { 0, 0, 0, 0, 0, 0, 0, 1, 2 },
@@ -237,7 +214,7 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
                                         {0, 4, 5, 2, 8, 6, 3, 1, 9}};
 
                         
-                        //r=6;
+                      // r=6;
         if(r==1)
         {
             for(i=0;i<N;i++)
@@ -314,22 +291,17 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
             }
             if(count!=0)
             {
-                printf("enter place to enter value - ");
+                printf("\n  enter place to enter value - ");
                 scanf("%d%d",&x,&y);
-                printf("enter value - ");
+                printf("\n  enter value - ");
                 scanf("%d",&v);
-                /*p=x;
-                q=y;
-                */
+                
                 --x;
                 --y;
 
                 c1=checkRC(grid,x,y,v,flag);
                 c2=checkBC(grid,x,y,v,flag);
-                
-                
-                       
-
+              
                 if(c1==0 && c2==0)
                 {
                     
@@ -343,19 +315,7 @@ void RandomNumberGenerator(const int nMin,const int nMax,const int  nNumOfNumsTo
         }while(count!=0);
         
         printf("\n     congratulation!!! \n\n");
-        /*for(i=0;i<N;i++)
-            {
-                for(j=0;j<N;j++)
-                {
-                    printf("%3d",grid[i][j]);
-                    
-                    
-                }
-                printf("\n");
-            }*/
-           // print(grid);
- 
- 
+     
     return (0);
 }
 
