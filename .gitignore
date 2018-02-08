@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-*.DS_Store
+.DS_Store
 Makefile
 
 # Object files
@@ -32,7 +32,7 @@ Makefile
 
 # Executables
 *.exe
-*.out
+a.out
 *.app
 *.i*86
 *.x86_64
